@@ -15,7 +15,7 @@ cap = cv2.VideoCapture(0)
 offset = 25
 imgSize = 300
 
-folder = "Data-C"
+folder = "alphabet_data_set/B"
 counter = 0
 
 with mp_hands.Hands(
@@ -79,6 +79,7 @@ with mp_hands.Hands(
 
     cv2.imshow("Image", image)
     key = cv2.waitKey(1)
+
     if key == ord("s"):
         counter += 1
         cv2.imwrite(f'{folder}/Image_{time.time()}.jpg',imgWhite)

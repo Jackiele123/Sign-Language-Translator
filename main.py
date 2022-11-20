@@ -46,7 +46,7 @@ with mp_hands.Hands(
                 y_min = y
         cv2.rectangle(image, (x_min - 25, y_min - 25), (x_max + 25, y_max + 25), (0, 255, 0), 2)
         cropped_image = image[y_min-25:y_max+25, x_min-25:x_max+25]
-        cv2.imshow('test', cropped_image)
+
         mp_drawing.draw_landmarks(
             image,
             hand_landmarks,
