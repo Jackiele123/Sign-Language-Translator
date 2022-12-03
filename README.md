@@ -3,4 +3,4 @@ Using CV and ML to develop a software that can translate sign language for educa
 
 Run line below to download all python libraries
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
