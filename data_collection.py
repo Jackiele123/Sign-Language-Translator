@@ -9,13 +9,14 @@ mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_hands = mp.solutions.hands
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
+letter = "C"
 
 offset = 25
 imgSize = 200
 
-folder = "data/B"
+folder = "data/" + letter
 counter = 0
 
 with mp_hands.Hands(
@@ -26,7 +27,7 @@ with mp_hands.Hands(
   while cap.isOpened():
     success, image = cap.read()
     results = hands.process(image)
-    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)  
+    # image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)  
     h, w, c = image.shape
 
     if results.multi_hand_landmarks:
@@ -82,7 +83,7 @@ with mp_hands.Hands(
 
     if key == ord("s"):
         counter += 1
-        cv2.imwrite(f'{folder}/Image_{time.time()}.jpg',imgWhite)
+        cv2.imwrite(f'{folder}/Image_' + letter + '_' + str(counter) + '.jpg',imgWhite)
         print(counter)
 
     if cv2.waitKey(25) & 0xFF == ord('r'):
