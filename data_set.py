@@ -11,7 +11,7 @@ batch_size = 32
 img_height = 200
 img_width = 200
 
-data_dir = pathlib.Path("test_set/alphabet_train")
+data_dir = pathlib.Path("data")
 
 image_count = len(list(data_dir.glob('*/*.jpg')))
 
@@ -115,4 +115,10 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
                                                  save_weights_only=True,
                                                  verbose=1)
 
-model.fit(train_ds, validation_data=val_ds, epochs=20, callbacks=[cp_callback])                                                   
+# model.fit(train_ds, validation_data=val_ds, epochs=20, callbacks=[cp_callback])   
+
+res = model.predict(
+    val_ds, batch_size=128, verbose=0, callbacks=[cp_callback]
+)
+
+print(res)
