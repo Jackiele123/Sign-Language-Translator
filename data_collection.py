@@ -11,14 +11,14 @@ mp_hands = mp.solutions.hands
 
 cap = cv2.VideoCapture(1)
 
-letter = "D"
+letter = "E"
 
 offset = 25
 imgSize = 200
 
 folder = "data/" + letter
 counter = 0
-
+rrrrrrr
 with mp_hands.Hands(
     model_complexity=0,
     min_detection_confidence=0.5,
