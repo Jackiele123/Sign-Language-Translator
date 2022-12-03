@@ -11,7 +11,7 @@ mp_hands = mp.solutions.hands
 
 cap = cv2.VideoCapture(1)
 
-letter = "C"
+letter = "D"
 
 offset = 25
 imgSize = 200
@@ -74,19 +74,17 @@ with mp_hands.Hands(
             imgResize = cv2.resize(cropped_image, (imgSize, hCal))
             hGap = math.floor((imgSize - hCal) / 2)
             imgWhite[hGap:hCal + hGap, :] = imgResize
-
-        cv2.imshow("ImageCrop", cropped_image)
         cv2.imshow("ImageWhite", imgWhite)
 
     cv2.imshow("Image", image)
     key = cv2.waitKey(1)
-
+    
     if key == ord("s"):
         counter += 1
         cv2.imwrite(f'{folder}/Image_' + letter + '_' + str(counter) + '.jpg',imgWhite)
         print(counter)
 
-    if cv2.waitKey(25) & 0xFF == ord('r'):
+    if cv2.waitKey(5) & 0xFF == ord('r'):
       break
 
 cap.release()
