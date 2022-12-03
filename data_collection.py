@@ -13,9 +13,9 @@ cap = cv2.VideoCapture(0)
 
 
 offset = 25
-imgSize = 300
+imgSize = 200
 
-folder = "alphabet_data_set/B"
+folder = "data/B"
 counter = 0
 
 with mp_hands.Hands(
@@ -49,12 +49,12 @@ with mp_hands.Hands(
                 if y < y_min:
                     y_min = y
             cropped_image = image[y_min-25:y_max+25, x_min-25:x_max+25]
-            mp_drawing.draw_landmarks(
-            image,
-            hand_landmarks,
-            mp_hands.HAND_CONNECTIONS,
-            mp_drawing_styles.get_default_hand_landmarks_style(),
-            mp_drawing_styles.get_default_hand_connections_style())
+            # mp_drawing.draw_landmarks(
+            # image,
+            # hand_landmarks,
+            # mp_hands.HAND_CONNECTIONS,
+            # mp_drawing_styles.get_default_hand_landmarks_style(),
+            # mp_drawing_styles.get_default_hand_connections_style())
 
         height, width, c = cropped_image.shape
 
