@@ -18,7 +18,7 @@ imgSize = 200
 
 folder = "data/" + letter
 counter = 0
-rrrrrrr
+
 with mp_hands.Hands(
     model_complexity=0,
     min_detection_confidence=0.5,
